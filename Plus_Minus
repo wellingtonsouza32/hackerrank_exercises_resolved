@@ -1,0 +1,47 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'plusMinus' function below.
+#
+# The function accepts INTEGER_ARRAY arr as parameter.
+#
+
+def plusMinus(arr):
+    #sizing the length of array
+    size = len(arr)
+    
+    #count type of values
+    positive = 0
+    negative = 0
+    zero = 0
+    
+    #Condition to count the values
+    for i in arr:
+        if i < 0:
+            negative += 1
+        elif i > 0:
+            positive += 1
+        elif i == 0:
+            zero += 1
+    
+    #calculate the two infos
+    pos = positive/size
+    neg = negative/size
+    ze = zero/size
+    
+    #print result with decimal precision
+    print("%.6f" % pos)
+    print("%.6f" % neg)
+    print("%.6f" % ze)
+if __name__ == '__main__':
+    n = int(input().strip())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    plusMinus(arr)
